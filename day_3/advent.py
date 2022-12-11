@@ -1,3 +1,4 @@
+# 44:41
 
 def get_lines():
     file = open("input.txt", "r")

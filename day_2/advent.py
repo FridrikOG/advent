@@ -48,8 +48,56 @@ def score_winner():
             score += 3
         elif result == 'loss':
             score += 0
-    print(score)
+    print("Answer to part 1 " , score)
             
+
+def decided_winner():
+    lines = get_lines()
+    score = 0
+    for line in lines:
+        op_move = line[0]
+        our_instr = line[2]
+        if our_instr =='X':
+            # We need to lose
+            if op_move == 'A':
+                our_move = 'Z'
+            elif op_move == 'B':
+                our_move = 'X'
+            elif op_move == 'C':
+                our_move = 'Y'
+        if our_instr == 'Y':
+            # draw
+            if op_move == 'A':
+                our_move = 'X'
+            elif op_move == 'B':
+                our_move = 'Y'
+            elif op_move == 'C':
+                our_move = 'Z'
+        if our_instr == 'Z':
+            # we need to win
+            if op_move == 'A':
+                our_move = 'Y'
+            elif op_move == 'B':
+                our_move = 'Z'
+            elif op_move == 'C':
+                our_move = 'X'
+
+        result = check_win(op_move, our_move)
+        if our_move == 'X':
+            score += 1
+        elif our_move == 'Y':
+            score += 2
+        elif our_move == 'Z':
+            score += 3
+        if result == 'win':
+            score += 6
+        elif result == 'draw':
+            score += 3
+        elif result == 'loss':
+            score += 0
+    print("Answer to part 2 " , score)
         
-        
-score_winner()
+# Part 1
+# score_winner()
+# Part 2
+decided_winner()

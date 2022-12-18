@@ -10,7 +10,7 @@ def display_stacks(stacks):
     for stack in stacks:
         print(stack, stacks[stack])
 def get_stack_len(lines):
-    dic = {}
+    dic = {}|
     for line in lines:
         line = line.strip()
         if len(line) != 0:            

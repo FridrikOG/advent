@@ -29,7 +29,7 @@ def get_monkeys(lines):
             monkey = {
             "items" : tot_items,
             "operations" : [first_action,sign,second_action],
-            }
+            }   
             monkey_lis.append(monkey)
             monkey_instr = []
     return monkey_lis
